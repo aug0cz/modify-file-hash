@@ -118,8 +118,8 @@ export default function RunCommand(actionType: ActionType) {
    * Execute command to a list of file paths recursively.
    */
   async function exeCmdToFileListRecursive(filePaths: string[], str: string, isModify: boolean): Promise<void> {
-    const rndStr = `#$${Math.floor(Math.random() * 10000)}-${str}$#`;
-    const exeCmdToFiles = filePaths.map((path) => exeCmdToFileRecursive(path, rndStr, isModify));
+    
+    const exeCmdToFiles = filePaths.map((path) => exeCmdToFileRecursive(path, str, isModify));
     await Promise.all(exeCmdToFiles);
   }
 
@@ -141,7 +141,8 @@ export default function RunCommand(actionType: ActionType) {
       await exeCmdToFileListRecursive(filePaths, str, isModify);
     } else if (stat.isFile()) {
       const exeCmd = isModify ? appendStringToFile : removeStringFromFile;
-      await execCmdToFile(exeCmd, filePath, str);
+      const rndStr = `#$${Math.floor(Math.random() * 10000)}-${str}$#`;
+      await execCmdToFile(exeCmd, filePath, isModify ? rndStr : str);
     }
   }
 
