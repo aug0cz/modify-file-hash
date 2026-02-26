@@ -1,10 +1,11 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "modify-hash",
-  "title": "Modify Hash",
+  "name": "modify-hash-rnd",
+  "title": "Modify Hash random str",
   "description": "Batch modify the hash of media files, which can be simply used for uploading online disk to prevent censorship.",
   "icon": "hasher.png",
   "author": "isfeng",
+  "owner": "ray-aug0cz",
   "categories": [
     "Developer Tools",
     "Productivity"
@@ -23,8 +24,8 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "modifyHash",
-      "title": "Modify Hash",
+      "name": "modifyHashRnd",
+      "title": "Modify Hash Random Str",
       "subtitle": "Media Files",
       "description": "Batch modify the hash of media files.",
       "mode": "view"
